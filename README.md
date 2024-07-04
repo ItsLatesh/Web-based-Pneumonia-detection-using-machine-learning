@@ -1,9 +1,11 @@
  PLAN OF IMPLEMNTATION
+
 Gathering and preprocessing data 
  All transformations performed on raw data prior to feeding it to the machine learning
 algorithm is refered to as pre-processing. Technically data preprocessing is a technique in
 which the main aim is to transform the data into that form which is compatile for the model to
 understand before data can be used, it must be preprocessed.
+
 Training the model with different algorithms
  In this proposed model, firstly the dataset is imported and split into three parts train,
 test and validation. Now each train, test and validation set is been initialized. After that now
@@ -15,7 +17,8 @@ data-frames of train-data, pass each train-data to data-frame attribute in the f
 will convert the images into array. So now as the data frame has been generated that will be
 passed into the model training. Convolutional neural networks are algorithms that detect
 patterns in data. In general, neural networks are composed of layers of neurons, each with its
-own set of learnable weights and biases. 
+own set of learnable weights and biases.
+ 
 Testing and evaluating model using F1 score as metric 
  The model is being tested on the test dataset after the completion of the training phase.
 Their performance were validated using the accuracy, recall, precision, F1, and area under the
@@ -34,7 +37,8 @@ prerequisites might be counts, specialized subtleties, information control and p
 other explicit usefulness that characterize what a framework should achieve. Social
 necessities depicting all the situations where the framework utilizes the useful prerequisites
 are caught being used cases. If a new user, then register by giving personal details like name,
-age, address, phone number, email and pssword.
+age, address, phone number, email and password.
+
 Deploying the model 
  Deploying the model into an existing production environment to make practical business
 decissions based on data. In order to start using a model for practical decision-making, it need
