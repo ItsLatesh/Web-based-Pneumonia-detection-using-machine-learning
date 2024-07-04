@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pneumonia-Detection Webapp</title>
+</head>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='semantic.min.css') }}">
+
+<body>
+
+    <div class="ui menu">
+          <div class="header item">
+           X Hospital
+          </div>
+
+         <a href="{{ url_for('index') }}" class="item">
+           Home
+          </a>
+
+           <a href="{{ url_for('loginuser') }}" class="item">
+            Login
+          </a>
+
+        <a href="{{ url_for('registeruser') }}" class="item">
+            Register
+          </a>
+    </div>
+
+&nbsp;&nbsp;&nbsp;
+<div class="ui container">
+
+    <h1 class="ui center aligned huge header" style="font-size:39px;">What we do?</h1>
+    <p  style="font-size:18px; opacity:70%;" >This web application uses Artificial intelligence to predict if patient has Pneumonia or not
+    on the basis of symptom values. This AI model comes with good accuracy. This AI model helps doctors to automate the testing work. Because of this efficiency of doctors
+    increases dramatically. We really believe that bringing value in doctors is our main goal.</p>
+
+</div>
+
+    <div class="ui container">
+          <img class="ui centered large image" src="{{ url_for( 'static', filename='doctors_data_img.png' ) }}" align="center">
+    </div>
+</body>
+</html>
