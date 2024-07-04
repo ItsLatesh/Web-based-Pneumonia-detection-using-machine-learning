@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pneumonia-Detection Webapp</title>
+</head>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='semantic.min.css') }}">
+
+<body>
+
+    <div class="ui menu">
+          <div class="header item">
+           X Hospital
+          </div>
+
+         <a href="{{ url_for('index') }}" class="item">
+           Home
+          </a>
+
+           <a  href="{{ url_for('aboutus') }}" class="item">
+            About Us
+          </a>
+
+          <a href="{{ url_for('logout') }}" class="item">
+            LogOut
+          </a>
+    </div>
+
+&nbsp;&nbsp;&nbsp;
+<div class="ui container">
+
+    <h1 class="ui center aligned huge header" style="font-size:39px;">Welcome Doctor {{ session['First_Name'] }} to Pneumonia Detection Webapp </h1>
+    <h2 class="ui center aligned sub header" style="font-size:15px;">Enter patient's symptoms values and click on predict button.</h2>
+
+</div>
+
+    <div class="ui container">
+          <img class="ui centered medium image" src="{{ url_for( 'static', filename='lungs-img.jpg' ) }}" align="center">
+    </div>
+&nbsp;
+    <div class="ui centered aligned container">
+        {% if result == 'Patient is normal' %}
+            <div class="ui positive message">
+
+              <div class="header">
+               Congratulations! Patient is normal
+              </div>
+              <p>Our AI model predicted that patient is normal.</p>
+            </div>
+
+        {% elif result == 'Pneumonia is present' %}
+             <div class="ui negative message">
+
+              <div class="header">
+               Unfortunately patient have Pneumonia
+              </div>
+              <p>Our AI model predicted that patient is affected with Pneumonia.</p>
+            </div>
+
+        {% else %}
+
+            <div class="ui compact message">
+              <p>Your prediction will appear here!</p>
+            </div>
+        {% endif %}
+
+    </div>
+&nbsp;
+    <div class="ui container">
+
+        <form class="ui form" method="post" enctype="multipart/form-data">
+
+             <label style="font-size:18px;">Patient's Oxygen Level</label>
+              <div class="field">
+                    <input type="text" placeholder="patient name" name="patient_oxygen">
+              </div>
+
+            <label style="font-size:18px;">Patient's Heart Rate</label>
+              <div class="field">
+                    <input type="text" placeholder="patient name" name="patient_heart_rate">
+              </div>
+
+            <label style="font-size:18px;">Patient's Blood Pressure</label>
+              <div class="field">
+                    <input type="text" placeholder="patient name" name="patient_blood_pressure">
+              </div>
+
+            <label style="font-size:18px;">Patient's Fever Rate</label>
+              <div class="field">
+                    <input type="text" placeholder="patient name" name="patient_fever">
+              </div>
+
+
+
+              <input class="ui button" name="submit" value="Predict" type="submit">
+        </form>
+
+    </div>
+
+    &nbsp;&nbsp;&nbsp;
+
+
+&nbsp;&nbsp;&nbsp;
+</body>
+
+    <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script src=" {{ url_for('static', filename='semantic.min.js') }} "></script>
+
+</html>

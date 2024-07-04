@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pneumonia-Detection Webapp</title>
+</head>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='semantic.min.css') }}">
+
+<body>
+
+    <div class="ui menu">
+          <div class="header item">
+           X Hospital
+          </div>
+
+
+          <a href="{{ url_for('index') }}" class="item">
+           Home
+          </a>
+
+           <a  href="{{ url_for('aboutus') }}" class="item">
+            About Us
+          </a>
+
+
+
+        <a href="{{ url_for('loginuser') }}" class="item">
+            Login
+          </a>
+
+        <a href="{{ url_for('registeruser') }}" class="item">
+            Register
+          </a>
+
+    </div>
+&nbsp;&nbsp;
+
+<div class="ui container">
+    <div class="ui two column grid">
+
+             <div class=" eight wide column">
+                 <img class="ui huge image" src="{{ url_for('static', filename='login_img.png') }}"  >
+             </div>
+
+         <div class="eight wide column ">
+                <h1 class="ui huge header"  style="font-size:35px;">Log in here to witness the AI beauty!</h1>
+
+                <form class="ui large form" method="post" enctype="multipart/form-data">
+                      <div class="field">
+                        <label>Email Id</label>
+                        <input type="text" name="user-email-log" placeholder="email">
+                      </div>
+
+                      <div class="field">
+                        <label>Password</label>
+                        <input type="password" name="user-password-log" placeholder="password">
+                      </div>
+
+
+
+                     <p style="color:red;">{{ error }}</p>
+
+                    <input class="ui secondary button" name="submit" value="Log In" type="submit"> <p>Not a user <a href="{{ url_for('registeruser') }}" >Register here</a></p>
+                </form>
+
+
+
+         </div>
+
+    </div>
+
+</div>
+
+
+</body>
+ <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script src=" {{ url_for('static', filename='semantic.min.js') }} "></script>
+
+</html>
+</html>
